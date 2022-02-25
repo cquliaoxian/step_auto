@@ -10,7 +10,7 @@ on:
       user:
         description: '用户名'
         required: true
-        default: '${{ secrets.USER }}'
+        default: ${{ secrets.USER }}
       pwd:
         description: '密码'
         required: true
