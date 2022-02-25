@@ -35,7 +35,7 @@ jobs:
         pip install requests
         user='${{ secrets.USER }}'
         pwd='${{ secrets.PWD }}'
-        step='${{ secrets.STEP }}'
+        step='${{ github.event.inputs.step }}'
         
         python3 main.py <<EOF
         ${user}
