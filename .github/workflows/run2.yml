@@ -10,11 +10,11 @@ on:
       user:
         description: '用户名'
         required: true
-        default: ''
+        default: '1'
       pwd:
         description: '密码'
         required: true
-        default: ''
+        default: '1'
       step:
         description: '步数'
         required: false
