@@ -10,15 +10,15 @@ on:
       user:
         description: '用户名'
         required: true
-        default: ${{ secrets.USER }}
+        default: ''
       pwd:
         description: '密码'
         required: true
-        default: 'lx931026'
+        default: ''
       step:
         description: '步数'
         required: false
-        default: '37666'
+        default: '0'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,9 +33,9 @@ jobs:
     - name: 开始
       run: |
         pip install requests
-        user='${{ secrets.USER }}'
-        pwd='${{ secrets.PWD }}'
-        step='${{ secrets.STEP }}'
+        user='${{ github.event.inputs.user }}'
+        pwd='${{ github.event.inputs.pwd }}'
+        step='${{ github.event.inputs.step }}'
         
         python3 main.py <<EOF
         ${user}
