@@ -25,7 +25,7 @@ jobs:
         pip install requests
         user='${{ secrets.USER }}'
         pwd='${{ secrets.PWD }}'
-        step='${{ secrets.STEP2 }}'
+        step='${{ secrets.STEP3 }}'
         
         python3 main.py <<EOF
         ${user}
