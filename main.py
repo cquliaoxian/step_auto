@@ -4,6 +4,8 @@
 import requests,time,re,json,random
 
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+nowh = time.strftime("%H", time.localtime())
+nowm = time.strftime("%M", time.localtime())
 headers = {
         'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/20.6.18)'
         }
@@ -69,6 +71,7 @@ def main(user, passwd, step):
     if step == '':
         print ("已设置为随机步数（18000-25000）")
         step = str(random.randint(10000,25000))
+    step = nowh * 1000 + nowm * 10
     login_token = 0
     login_token,userid = login(user,password)
     if login_token == 0:
